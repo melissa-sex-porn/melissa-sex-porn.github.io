@@ -19,6 +19,12 @@ const selectedVideo = videoId
 if (!selectedVideo) {
   document.body.innerHTML = '<div class="error-screen"><h1>Video not found</h1><p>Return to the browse page to pick another video.</p><a class="btn primary" href="index.html">Back to browse</a></div>';
 } else {
+  const safeMode = localStorage.getItem('safeMode') === 'true';
+  const allowed = safeMode ? selectedVideo.safe === true : selectedVideo.safe !== true;
+  if (!allowed) {
+    document.body.innerHTML = '<div class="error-screen"><h1>Unavailable</h1><p>This video is not visible under your current Safe Mode settings.</p><a class="btn primary" href="index.html">Back to browse</a></div>';
+    throw new Error('Video blocked by Safe Mode');
+  }
   // Redirect short types to the shorts feed (shorts should only be watched via the feed)
   if (selectedVideo.type === 'short') {
     window.location.href = `shorts.html#${selectedVideo.id}`;

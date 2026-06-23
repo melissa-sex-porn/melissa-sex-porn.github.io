@@ -22,7 +22,13 @@
       </div>
       <div class="top-actions">
         <a class="btn secondary" href="shorts.html"><i class="fas fa-film"></i> Shorts</a>
-        <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+        <div class="menu-dropdown">
+          <button class="menu-btn" aria-haspopup="true" aria-expanded="false" aria-label="Open menu"><img class="icon icon-menu" src="icons/menu.svg" alt="Menu"/></button>
+          <div class="menu-dropdown-content" role="menu">
+            <a class="menu-item" role="menuitem" href="settings.html">Settings</a>
+          </div>
+        </div>
+
         <button class="profile-btn" aria-label="Profile">
           <span>Me</span>
         </button>
@@ -30,7 +36,7 @@
     </header>
 
     <form class="search-box" action="search.html" method="get">
-      <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+      <button type="submit" aria-label="Search"><img class="icon icon-search" src="icons/search.svg" alt="Search"/></button>
       <input id="searchInput" name="search" type="search" placeholder="Search videos and shorts" aria-label="Search videos" />
     </form>
 
@@ -122,10 +128,12 @@
         <i class="fas fa-film"></i>
         <span>Shorts</span>
       </a>
+      
     </nav>
   </div>
 
   <script src="videos.js"></script>
+  <script src="settings.js"></script>
   <script src="app.js"></script>
   <script src="metadata.js"></script>
 </body>

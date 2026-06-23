@@ -47,11 +47,24 @@ function renderShorts(items) {
 }
 
 function updateView() {
-  const visibleShorts = videos.filter(video => video.type === 'short');
-  const visibleVideos = videos.filter(video => video.type === 'video');
+  const safeMode = localStorage.getItem('safeMode') === 'true';
+  const allShorts = videos.filter(video => video.type === 'short');
+  const allVideos = videos.filter(video => video.type === 'video');
+
+  const filterBySafe = item => {
+    if (safeMode) return item.safe === true;
+    return item.safe !== true;
+  };
+
+  const visibleShorts = allShorts.filter(filterBySafe);
+  const visibleVideos = allVideos.filter(filterBySafe);
   renderVideos(visibleVideos);
   renderShorts(visibleShorts.slice(0, 5));
   shortsSection.style.display = visibleShorts.length ? 'block' : 'none';
 }
+
+window.addEventListener('storage', e => {
+  if (e.key === 'safeMode') updateView();
+});
 
 updateView();

@@ -6,6 +6,7 @@ window.videos = [
     category: 'Featured',
     type: 'video',
     description: 'A full premiere showing the latest Melissa Studio collection, filmed on location with the creative team.',
+    safe: false,
     src: './Videos/MelissaFull1.mp4'
   },
   {
@@ -15,6 +16,7 @@ window.videos = [
     category: 'Featured',
     type: 'video',
     description: 'The second full studio walkthrough with extended behind-the-scenes footage and styling details.',
+    safe: false,
     src: './Videos/MelissaFull2.mp4'
   },
   {
@@ -24,6 +26,7 @@ window.videos = [
     category: 'Lifestyle',
     type: 'video',
     description: 'A calm session from Melissa Studio with gentle pacing, mood lighting, and safe styling content.',
+    safe: true,
     src: './Videos/MelissaFullSafe1.mp4'
   },
   {
@@ -33,6 +36,7 @@ window.videos = [
     category: 'Lifestyle',
     type: 'video',
     description: 'Continuation of the Melissa Studio safe session with a focus on artistic storytelling and studio detail.',
+    safe: true,
     src: './Videos/MelissaFullSafe2.mp4'
   },
   {
@@ -42,6 +46,7 @@ window.videos = [
     category: 'Shorts',
     type: 'short',
     description: 'A quick workspace clip from Melissa Studio showcasing the set design and motion.',
+    safe: false,
     src: './Videos/Melissa1.mp4'
   },
   {
@@ -105,6 +110,7 @@ window.videos = [
     category: 'Shorts',
     type: 'short',
     description: 'A final studio short with a focus on mood, color, and cinematic composition.',
+    safe: true,
     src: './Videos/MelissaSafe1.mp4'
   },
   {
@@ -114,6 +120,7 @@ window.videos = [
     category: 'Shorts',
     type: 'short',
     description: 'A calm and safe studio short with a focus on lighting, texture, and composition.',
+    safe: true,
     src: './Videos/MelissaSafe2.mp4'
   },
   {
@@ -123,6 +130,7 @@ window.videos = [
     category: 'Shorts',
     type: 'short',
     description: 'A final safe studio short with a focus on mood, color, and cinematic composition.',
+    safe: true,
     src: './Videos/MelissaSafe3.mp4'
   },
   {
@@ -132,6 +140,7 @@ window.videos = [
     category: 'Shorts',
     type: 'short',
     description: 'A calm and safe studio short with a focus on lighting, texture, and composition.',
+    safe: true,
     src: './Videos/MelissaSafe4.mp4'
   },
   {
@@ -141,6 +150,7 @@ window.videos = [
     category: 'Shorts',
     type: 'short',
     description: 'A final safe studio short with a focus on mood, color, and cinematic composition.',
+    safe: true,
     src: './Videos/MelissaSafe5.mp4'
   },
   {
@@ -150,6 +160,7 @@ window.videos = [
     category: 'Shorts',
     type: 'short',
     description: 'A calm and safe studio short with a focus on lighting, texture, and composition.',
+    safe: true,
     src: './Videos/MelissaSafe6.mp4'
   },
   {
@@ -159,6 +170,7 @@ window.videos = [
     category: 'Shorts',
     type: 'short',
     description: 'A final safe studio short with a focus on mood, color, and cinematic composition.',
+    safe: true,
     src: './Videos/MelissaSafe7.mp4'
   }
 

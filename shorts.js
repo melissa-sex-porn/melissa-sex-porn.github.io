@@ -1,7 +1,11 @@
 const shortsContainer = document.getElementById('shortsContainer');
 const shortsHint = document.getElementById('shortsHint');
 let shorts = window.videos.filter(video => video.type === 'short');
-let filteredShorts = [...shorts];
+const applySafeFilterToShorts = () => {
+  const safeMode = localStorage.getItem('safeMode') === 'true';
+  return shorts.filter(v => (safeMode ? v.safe === true : v.safe !== true));
+};
+let filteredShorts = applySafeFilterToShorts();
 let currentIndex = 0;
 let touchStartY = 0;
 
@@ -92,7 +96,7 @@ function handleTouchEnd(event) {
   }
 }
 
-if (shorts.length === 0) {
+  if (shorts.length === 0) {
   shortsContainer.innerHTML = '<div class="shorts-empty"><h2>No shorts available yet.</h2><p>Add short videos to start the reel experience.</p></div>';
   shortsHint.textContent = '';
 } else {
@@ -103,6 +107,17 @@ if (shorts.length === 0) {
   const targetId = queryId || hashId;
   const startIndex = targetId ? findIndexById(targetId) : -1;
   showShort(startIndex >= 0 ? startIndex : 0);
+
+  window.addEventListener('storage', () => {
+    filteredShorts = applySafeFilterToShorts();
+    if (filteredShorts.length === 0) {
+      shortsContainer.innerHTML = '<div class="shorts-empty"><h2>No reels found.</h2><p>Adjust your Safe Mode or add more shorts.</p></div>';
+      shortsHint.textContent = '';
+      return;
+    }
+    currentIndex = 0;
+    showShort(currentIndex);
+  });
 
   window.addEventListener('hashchange', () => {
     const id = location.hash ? location.hash.slice(1) : null;

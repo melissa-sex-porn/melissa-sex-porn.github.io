@@ -64,7 +64,11 @@ if (!query) {
   videoGrid.innerHTML = '<div class="shorts-empty"><h2>No search query entered.</h2><p>Type a keyword and press enter to search the library.</p></div>';
   shortsGrid.innerHTML = '<div class="shorts-empty"><p>Use the search box above to show matching shorts.</p></div>';
 } else {
-  const matches = videos.filter(video => matchesQuery(video, query));
+  const safeMode = localStorage.getItem('safeMode') === 'true';
+  const matches = videos.filter(video => matchesQuery(video, query)).filter(video => {
+    if (safeMode) return video.safe === true;
+    return video.safe !== true;
+  });
   const videoResults = matches.filter(video => video.type === 'video');
   const shortResults = matches.filter(video => video.type === 'short');
 
