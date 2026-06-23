@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search | Melissa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-d0g7+I1B5m/0q2ey3V55PsCTR6vM98xtA6+tZ7xYqJt+JUzltqRgItmKXbNUu32dGLvYkBg85V6u0UoYqLJqmg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+        <div>
+          <p class="brand-label">Melissa</p>
+          <span class="brand-tag">Search videos</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="btn secondary" href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a class="btn secondary" href="shorts.html"><i class="fas fa-film"></i> Shorts</a>
+      </div>
+    </header>
+
+    <form class="search-box" action="search.html" method="get">
+      <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+      <input id="searchInput" name="search" type="search" placeholder="Search videos and shorts" aria-label="Search videos" />
+    </form>
+
+    <main class="main-content search-page">
+      <section class="search-heading">
+        <h1>Search results</h1>
+        <p id="searchMessage">Search for videos, creator names, or categories.</p>
+      </section>
+
+      <section class="video-grid-section">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">Videos</p>
+            <h2>Matching videos</h2>
+          </div>
+          <span class="result-count" id="videoCount"></span>
+        </div>
+        <div class="video-grid" id="searchVideoGrid"></div>
+      </section>
+
+      <section class="shorts-section">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">Shorts</p>
+            <h2>Matching reels</h2>
+          </div>
+          <span class="result-count" id="shortsCount"></span>
+        </div>
+        <div class="shorts-grid" id="searchShortsGrid"></div>
+      </section>
+    </main>
+    <nav class="bottom-nav">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" href="shorts.html">
+        <i class="fas fa-film"></i>
+        <span>Shorts</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="videos.js"></script>
+  <script src="search.js"></script>
+  <script src="metadata.js"></script>
+</body>
+</html>

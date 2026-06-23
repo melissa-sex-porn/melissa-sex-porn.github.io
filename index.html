@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melissa Video Browse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-d0g7+I1B5m/0q2ey3V55PsCTR6vM98xtA6+tZ7xYqJt+JUzltqRgItmKXbNUu32dGLvYkBg85V6u0UoYqLJqmg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+        <div>
+          <p class="brand-label">Melissa</p>
+          <span class="brand-tag">Browse videos</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="btn secondary" href="shorts.html"><i class="fas fa-film"></i> Shorts</a>
+        <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+        <button class="profile-btn" aria-label="Profile">
+          <span>Me</span>
+        </button>
+      </div>
+    </header>
+
+    <form class="search-box" action="search.html" method="get">
+      <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+      <input id="searchInput" name="search" type="search" placeholder="Search videos and shorts" aria-label="Search videos" />
+    </form>
+
+    <div class="layout-grid">
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-group">
+          <p class="sidebar-heading">Explore</p>
+          <a class="nav-link active" href="#"><i class="fas fa-home"></i> Home</a>
+          <a class="nav-link" href="#"><i class="fas fa-fire"></i> Trending</a>
+          <a class="nav-link" href="#"><i class="fas fa-clock"></i> Watch later</a>
+          <a class="nav-link" href="#"><i class="fas fa-layer-group"></i> Library</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-heading">Channels</p>
+          <a class="nav-link" href="#"><i class="fas fa-tv"></i> Hot picks</a>
+          <a class="nav-link" href="#"><i class="fas fa-music"></i> Music</a>
+          <a class="nav-link" href="#"><i class="fas fa-gamepad"></i> Gaming</a>
+          <a class="nav-link" href="#"><i class="fas fa-star"></i> Featured</a>
+          <a class="nav-link" href="shorts.html"><i class="fas fa-film"></i> Shorts</a>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <section class="hero-card">
+          <div class="hero-copy">
+            <p class="eyebrow">Featured</p>
+            <h1>Find your next favorite video</h1>
+            <p>Organized for fast browsing with trending playlists, fresh channels, and curated categories.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#videos">Browse videos</a>
+              <a class="btn secondary" href="#videos">Browse all</a>
+              <a class="btn secondary" href="shorts.html">Watch shorts</a>
+            </div>
+          </div>
+          <div class="hero-preview">
+            <div class="hero-thumb">
+              <div class="play-icon"><i class="fas fa-play"></i></div>
+              <span class="duration">12:43</span>
+            </div>
+            <div class="hero-meta">
+              <h2>Summer trends & creator spotlights</h2>
+              <p>Swipe through featured creators and recommended playlists to keep your feed fresh.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="shorts-section" id="shortsSection">
+          <div class="section-header">
+            <div>
+              <p class="section-eyebrow">Shorts</p>
+              <h2>Quick reels</h2>
+            </div>
+            <a class="link-button" href="shorts.html">See all shorts</a>
+          </div>
+          <div class="shorts-grid" id="shortsGrid"></div>
+        </section>
+
+        <section class="video-grid-section" id="videos">
+          <div class="section-header">
+            <div>
+              <p class="section-eyebrow">Latest videos</p>
+              <h2>All videos</h2>
+            </div>
+            <span class="result-count" id="resultCount">8 videos</span>
+          </div>
+          <div class="video-grid" id="videoGrid"></div>
+        </section>
+      </main>
+
+      <aside class="side-panel">
+        <div class="panel-card">
+          <h3>Up next</h3>
+          <p>Quick access to trending clips and creator reels.</p>
+          <ul class="mini-list">
+            <li><span>1</span> Chill study beats</li>
+            <li><span>2</span> Coral room makeover</li>
+            <li><span>3</span> 10-minute yoga flow</li>
+            <li><span>4</span> New release unboxing</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <nav class="bottom-nav">
+      <a class="nav-link active" href="index.html">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" href="shorts.html">
+        <i class="fas fa-film"></i>
+        <span>Shorts</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="videos.js"></script>
+  <script src="app.js"></script>
+  <script src="metadata.js"></script>
+</body>
+</html>

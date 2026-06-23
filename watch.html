@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watch | Melissa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-d0g7+I1B5m/0q2ey3V55PsCTR6vM98xtA6+tZ7xYqJt+JUzltqRgItmKXbNUu32dGLvYkBg85V6u0UoYqLJqmg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="watch-page">
+  <div class="page-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <a class="brand-badge" href="index.html">M</a>
+        <div>
+          <p class="brand-label">Melissa</p>
+          <span class="brand-tag">Watch video</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="icon-btn" href="index.html" aria-label="Back to browse"><i class="fas fa-arrow-left"></i></a>
+        <button class="profile-btn" aria-label="Profile"><span>Me</span></button>
+      </div>
+    </header>
+
+    <main class="watch-grid">
+      <section class="watch-content">
+        <div class="watch-player">
+          <div class="video-badge" id="videoBadge">Featured</div>
+          <video id="watchVideo" controls playsinline preload="metadata" class="watch-video-player"></video>
+          <div class="video-length"><span id="videoDuration">0:00</span></div>
+        </div>
+
+        <div class="watch-info">
+          <div class="watch-meta">
+            <div>
+              <p class="eyebrow" id="watchCategory">Featured</p>
+              <h1 id="watchTitle">Loading video...</h1>
+            </div>
+            <a class="btn secondary" href="index.html">Back to browse</a>
+          </div>
+          <p class="watch-stats" id="watchStats">Loading creator and views</p>
+          <p class="watch-description" id="watchDescription">Video description will appear here once the clip loads.</p>
+        </div>
+      </section>
+
+      <aside class="watch-sidebar">
+        <div class="panel-card">
+          <h3>Up next</h3>
+          <div id="relatedList"></div>
+        </div>
+        <div class="panel-card panel-accent">
+          <h3>More shorts</h3>
+          <div id="moreShorts"></div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="videos.js"></script>
+  <script src="watch.js"></script>
+  <script src="metadata.js"></script>
+</body>
+</html>
